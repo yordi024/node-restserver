@@ -12,7 +12,7 @@ app.get('/', function(req, res) {
     res.json('Hello World')
 });
 
-app.get('/usuario', [verificaToken, verificaAdmin_Role], function(req, res) {
+app.get('/usuario', verificaToken, function(req, res) {
 
     let desde = req.query.desde || 0;
     desde = Number(desde);
